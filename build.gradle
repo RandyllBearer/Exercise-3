@@ -21,6 +21,10 @@ task sequencehelp << {
 }
 
 run {
-	systemProperties System.getProperties()
-	args System.getProperty("args").split()
+	try{
+		systemProperties System.getProperties()
+		args System.getProperty("args").split()
+	}catch(Exception e){
+		//do nothing
+	}
 }
