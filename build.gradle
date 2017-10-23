@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "test.test"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile 'junit:junit:4.12'
+}
+
+task plumbus << {
+	println "A plumbus for you!"
+}
+
+run {
+	systemProperties System.getProperties()
+	args System.getProperty("args").split()
+
+}
