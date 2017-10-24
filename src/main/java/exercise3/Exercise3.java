@@ -33,6 +33,10 @@ public class Exercise3{
 		}else{
 			try{
 				userInput = Integer.parseInt(args[0]);
+				if(userInput < 0 ){
+					System.out.println("ERROR: Exercise3.java can only work with positive values.");
+					System.exit(1);
+				}
 			}catch(NumberFormatException e){
 				System.out.println("ERROR: Exercise3.java could not parse the passed integer value");
 				System.exit(1);
